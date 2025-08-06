@@ -1,0 +1,21 @@
+package foro_hub.challengeforo.domain.usuario;
+
+public record DetallesUsuarioDTO(
+        Long id,
+        String username,
+        Role role,
+        String nombre,
+        String email,
+        Boolean enabled
+) {
+
+    public DetallesUsuarioDTO(Usuario usuario){
+        this(usuario.getId(),
+                usuario.getUsername(),
+                usuario.getRole(),
+                usuario.getNombre(),
+                usuario.getEmail(),
+                usuario.getEnabled()
+        );
+    }
+}
